@@ -11,3 +11,17 @@ Important linked list methods:
 insertFirst - PrintList - insertLast - insertAt -getAt - removeAt
 
 Wikipedia: https://en.wikipedia.org/wiki/Linked_list
+
+FAQ
+
+LL are objects in JS
+
+.next property IS A POINTER? > Honestly I think that it is not in JS.
+
+insertAt personal explanation:
+/*All we have to do is to modify the .next property from the previous
+        node, to point the new node. And the new node points to the node that
+        was pointed by the previous one*/
+
+removeAt:
+Think it as A, B, C.
