@@ -19,9 +19,11 @@ LL are objects in JS
 .next property IS A POINTER? > Honestly I think that it is not in JS.
 
 insertAt personal explanation:
-/*All we have to do is to modify the .next property from the previous
-        node, to point the new node. And the new node points to the node that
-        was pointed by the previous one*/
+Think it as A, bis(insertion), C 
 
 removeAt:
 Think it as A, B, C.
+
+PrintList: It's crucial that the while only validates that current is true. 
+One-node LL will fail if current.next is checked instead.
+Check practise-2 for an example.
