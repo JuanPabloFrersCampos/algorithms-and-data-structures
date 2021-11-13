@@ -1,0 +1,9 @@
+https://medium.com/@anshul.kashyap03/stack-queue-linked-list-and-hash-table-in-javascript-26e844494436
+
+Stack: Think it as a stack of books. Last in is the first to go out (LIFO)
+Programmatically, stacks are arrays with two principled operations: push and pop.
+We can reverse the order of an array using unshift and shift methods.
+
+Queue: Think it as a queue in a grocery store. The first go in, the first goes out (FIFO)
+Programmatically, Queues are just arrays with two primary operations: unshift and pop. 
+If the direction is reversed, we can replace unshift and pop with push and shift, respectively.
