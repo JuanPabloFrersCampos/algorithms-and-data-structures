@@ -16,7 +16,22 @@ FAQ
 
 LL are objects in JS
 
-.next property IS A POINTER? > Honestly I think that it is not in JS.
+---
+
+Proof that .next and .prev prop are a memory reference:
+
+//.next and .prev prop are a memory reference, or an object copy?
+  //(third and fourth item must have the same value)
+  areEqual(){
+    let secondNode = this.head.next;
+    let thirdNode = secondNode.next;
+    let bool = secondNode === thirdNode ? true : false;
+    return bool;
+  }
+  //RETURNS: FALSE
+  //.next and .prev store a memory reference, not an object copy.
+
+  ---
 
 insertAt personal explanation:
 Think it as A, bis(insertion), C 
