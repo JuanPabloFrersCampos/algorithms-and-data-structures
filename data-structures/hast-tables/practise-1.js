@@ -49,9 +49,9 @@ class HashTable{
   1er caso: No existe la key especificada
   2do caso: El nodo es el primer elemento del arreglo, y no hay relación next
   3er caso: EL nodo es el primer elemento del arreglo, y hay relacion next
-  3er caso: El nodo tiene relación prev, pero NO next.
-  4to caso: El nodo tiene relaciones prev y next
-  5to (no) utilizado: La key se repite, hay más de un nodo.
+  4to caso: El nodo tiene relación prev, pero NO next.
+  5to caso: El nodo tiene relaciones prev y next
+  6to (no) utilizado: La key se repite, hay más de un nodo.
   */
   delete(key){
     const hash = this.hash(key);
@@ -62,11 +62,12 @@ class HashTable{
     if (this.hashTable[hash].key == key && !this.hashTable[hash].next){
       this.hashTable[hash] = null;
     }
+    //3rd case: If the node to delete is the first one, and has .next relation
     else if (this.hashTable[hash].key == key && this.hashTable[hash].next){
       this.hashTable[hash] = this.hashTable[hash].next;
     }
 
-    //3rd and 4th case: If the node todo delete is not the first one.
+    //4th and 5th case: If the node todo delete is not the first one.
     else{
       let prev, current=this.hashTable[hash], next;
       while (current.key != key){
