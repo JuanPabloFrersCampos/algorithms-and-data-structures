@@ -67,7 +67,7 @@ class HashTable{
       this.hashTable[hash] = this.hashTable[hash].next;
     }
 
-    //4th and 5th case: If the node todo delete is not the first one.
+    //4th and 5th case: If the node to delete is not the first one.
     else{
       let prev, current=this.hashTable[hash], next;
       while (current.key != key){
@@ -109,7 +109,6 @@ class HashTable{
 var ht = new HashTable(10);
 ht.add('Paquito', 12);
 ht.add('otiuqaP', 24);
-ht.delete('otiuqaP');
-//ht.delete('otiuqaP')
-ht.search('otiuqaP');
+ht.add('pepin', 17);
+ht.search('otiuqaP'); 
 console.log(ht);
