@@ -1,16 +1,15 @@
 class Node{
   constructor(key, value=null, next=null){
-    this.key = key;
-    this.value = value;
+    this[key] = value;
     this.next = next;
   }
 }
 
 class HashTable{
-  constructor(maxSize=10){
-    this.maxSize = maxSize;
+  constructor(){
+    this.maxSize = 10;
     this.actualSize = 0;
-    this.hashTable = new Array(maxSize);
+    this.hashTable = new Array(this.maxSize);
     //Initializes all the array elements to = null
     for (let i=0; i < this.maxSize; i++){
       this.hashTable[i] = null;
@@ -86,10 +85,10 @@ class HashTable{
 
 
 var ht = new HashTable;
-ht.add('aaab');
-ht.add('aaba');
-ht.add('abaa');
-ht.add('baaa');
+ht.add('aaab', 1);
+ht.add('aaba', 2);
+ht.add('abaa', 3);
+ht.add('baaa', 4);
 ht.remove('baaa');
 current = ht.hashTable[9];
 while (current){
