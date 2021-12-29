@@ -1,0 +1,17 @@
+- Objetos: Como acceder solo a la key de una propiedad, como acceder al value. Como iterar un objeto correctamente
+  También revisar esto de objetos: https://www.tabnine.com/academy/javascript/how-to-get-an-objects-keys-and-values/
+
+Usar for...in para iterar objetos >> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in
+---
+
+listOfItems es un objeto, el cual contiene como propiedades los números que parecen en un arreglo, y cuantas veces aparecen.
+Más info en 2-arrays >> oddOcurrencesInArray.js
+
+function solution(A){
+  var listOfItems = organizeItems(A);
+
+  for (property in listOfItems){ //>>> Se accede a cada propiedad.
+    let value = listOfItems[property]; //>>>> Se accede al valor
+    if (value % 2 !== 0) return parseInt(property); //>>> Se devuelve solo la key
+  }
+}

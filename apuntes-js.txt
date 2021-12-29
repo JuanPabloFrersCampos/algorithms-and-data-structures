@@ -1,0 +1,15 @@
+To iterate objects: for...in https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in
+To iterate arrays: for...of
+
+Contrapuestos en codility >> 2-arrays >> oddOcurrences
+
+Ejemplo de como funciona for...in:
+
+function solution(A){
+  var listOfItems = organizeItems(A);
+
+  for (property in listOfItems){ //>>> Se accede a cada propiedad.
+    let value = listOfItems[property]; //>>>> Se accede al valor
+    if (value % 2 !== 0) return parseInt(property); //>>> Se devuelve solo la key
+  }
+}
