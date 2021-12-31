@@ -13,3 +13,17 @@ function solution(A){
     if (value % 2 !== 0) return parseInt(property); //>>> Se devuelve solo la key
   }
 }
+
+
+COMO VER EL TIEMPO DE EJECUCIÓN:
+console.time('test'); //al inicio
+//el código eca
+console.timeEnd('test'); //al final
+
+
+Fastest way to sort an array:
+https://stackoverflow.com/questions/1063007/how-to-sort-an-array-of-integers-correctly (dy_ answer)
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
+
+(A is an array of integers)
+A = new Uint32Array(A).sort();
