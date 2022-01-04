@@ -9,7 +9,7 @@ class Node{
 class HashTable{
   constructor(maxSize=10){
     this.maxSize = maxSize;
-    this.currentSize = 0;
+    this._currentSize = 0;
     this.hashTable = new Array(maxSize);
     for (let i=0; i<maxSize; i++){
       this.hashTable[i] = null;
@@ -42,7 +42,7 @@ class HashTable{
       }
       current.next = new Node(key, value);
     }
-    this.currentSize += 1;
+    this._currentSize += 1;
   }
 
   /*
@@ -86,7 +86,7 @@ class HashTable{
         next.prev = prev;
       }
     }
-    this.currentSize--;
+    this._currentSize--;
   }
 
   search(key){

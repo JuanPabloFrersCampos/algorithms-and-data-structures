@@ -13,7 +13,7 @@ class HashTable{
   constructor(maxSize){
     this.maxSize = maxSize;
     //To track the amount of current entries (will be used in other exercises)
-    this.currentSize = 0;
+    this._currentSize = 0;
     //Hash table inicialization. Initially all index = null
     this.hashTable = new Array(maxSize);
     for (let i=0; i<maxSize; i++){
@@ -44,7 +44,7 @@ class HashTable{
       }
       current.next = new Node(key, value);
     }
-    this.currentSize += 1;
+    this._currentSize += 1;
   }
 }
 

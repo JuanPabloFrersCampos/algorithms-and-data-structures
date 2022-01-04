@@ -1,3 +1,48 @@
+Arreglos en JS: Cuales son un conjunto de direcciones de memoria vs cuales son un conjunto de valores
+https://stackoverflow.com/questions/12482961/change-values-in-array-when-doing-foreach segunda respuesta
+
+
+En JS, un arreglo es un conjunto de variables, las variables en JS pueden ser:
+
+1- Variables primitivas (undefined, null String, BOolean, Number): Se almacena el valor
+2- Referencias (objetos personalizados): Se almacena la dirección de memoria del objeto.
+
+En JS, los parámetros de las funciones SIEMPRE se pasan por valor.
+Por lo tanto, si pasamos un arreglo conteniendo variables primitivas, y querramos modificar el arreglo en sí, tendremos que especificarlo.
+En cambio, si pasamos un arreglo que contiene un objeto, y querramos modificar el arreglo en sí, podemos simplemente acceder al índice del arreglo que nos interesa.
+
+En el siguiente ejemplo, no se modifica el valor del arreglo, si no de la copias "part":
+var arr = ["one","two","three"];
+
+arr.forEach(function(part) {
+  part = "four";
+  return "four";
+})
+
+
+En el siguiente ejemplo, SI se modifica el arreglo original:
+var arr = ["one","two","three"];
+
+arr.forEach(function(part, index) {
+  arr[index] = "four";
+});
+
+En el siguiente ejemplo, también se modifica el arreglo original (la idea es la misma):
+counter.forEach((element, index) => counter[index] = maxValue);
+
+En el caso de que el arreglo conteniera variables de tipo referencia (objetos personalizados), podemos acceder directamente a las propiedades al ser direcciones de memoria
+var arr = [{ num : "one" }, { num : "two"}, { num : "three"}];
+
+arr.forEach(function(part, index) {
+  // part and arr[index] point to the same object
+  // so changing the object that part points to changes the object that arr[index] points to
+
+  part.num = "four";
+});
+
+
+---
+
 - Objetos: Como acceder solo a la key de una propiedad, como acceder al value. Como iterar un objeto correctamente
   También revisar esto de objetos: https://www.tabnine.com/academy/javascript/how-to-get-an-objects-keys-and-values/
 

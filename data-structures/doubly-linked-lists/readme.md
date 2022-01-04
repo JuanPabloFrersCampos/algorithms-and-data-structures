@@ -17,5 +17,18 @@ Proof that .next and .prev prop are a memory reference:
   //RETURNS: FALSE
   //.next and .prev store a memory reference, not an object copy.
 
+// ANother proof:
+else if (this.head === this.tail){
+      this.increaseSizeByOne();
+      let aux = this.head;
+      newNode.pre = aux;
+      this.head.next = newNode;
+      this.tail = newNode;
+      console.log(this.head === newNode.pre); 
+    }
+    //RETURNS: TRUE
+
+
+
 Special considerations:
 Shift() and pop are () tricky (both are more or less the same), a lot of considerations must be done. Example available in practise 2.
