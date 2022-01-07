@@ -29,29 +29,6 @@ const initializeCounters = N => {
     counters[i] = 0;
   }
 }
-function solution (N, A){
-  let maxCounter = 0;
-  initializeCounters(N);
-
-  for (i=0; i<A.length; i++){
-    if (A[i] <= N){
-      counters[A[i] - 1]++;
-      if (counters[A[i] -1] > maxCounter) maxCounter = counters[A[i] - 1];
-    }
-    else{
-      //It is a LOT MORE EFFICIENT to create a new array with values = maxCounter, instead of modifying each one. 
-      //Also is more efficient to iterate through the array manually
-      //counters.forEach((element, index) => counters[index] = maxCounter); >> REALLY unefficient way
-      for (let i=0; i<N; i++){
-        counters[i] = maxCounter;
-      }
-    }
-    
-  return counters;
-}
-
-
-/* With the following solution () a 60% in performance is gotten
 
 function solution (N, A){
   let maxCounter = 0;
@@ -64,7 +41,7 @@ function solution (N, A){
     }
     else{
       //It is a LOT MORE EFFICIENT to create a new array with values = maxCounter, instead of modifying each one. 
-      //Also is more efficient to iterate through the array manually
+      //Also is more efficient to iterate through the array manually, as shown below.
       //counters.forEach((element, index) => counters[index] = maxCounter); >> REALLY unefficient way
       for (let i=0; i<N; i++){
         counters[i] = maxCounter;
@@ -74,9 +51,6 @@ function solution (N, A){
 
   return counters;
 }
-
-*/
-
 
 var A = [];
 A[0] = 3
