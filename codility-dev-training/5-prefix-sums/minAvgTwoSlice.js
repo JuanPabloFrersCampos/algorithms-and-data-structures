@@ -1,47 +1,38 @@
 /*
-Plan:
-  let actualMiniumSlide = Math.abs(A[0] + A[1])
-  //In order to store the indexes a linked list is a good option, but it is not worth it in this exercise.
-  let indexPositionsOfMiniumSlides = new Array (1);
-
-  for (let i=1; i < A.length - 1; i++){
-    if (Math.abs(A[i] + A[i+1]) < actualMiniumSlide){
-      actualMiniumSlide = Math.abs(A[i] + A[i+1]);
-      indexPositionOfMiniumSlides = new Array (1);
-      indexPositionOfMiniumSlides = i;
-    }
-    else if (Math.abs(A[i] + A[i+1]) == actualMiniumSlide){
-      indexPositionOfMiniumSlides = new Array (indexPositionOfMiniumSlides.length + 1);
-      indexPositionOfMiniumSlides.push(i);
-    }
-  }
-  return indexPositionOfMiniumSlides;
+Premise: The smalles avg will be found splitting the array in parts of 2 and 3. Spliting
+the array between more parts will never contain smaller averages, since all the other
+numbers all products of 2 or 3.
 */
-function solution(A){
-  let actualMiniumSlide = Math.abs(A[0] + A[1]);
-  let indexPositionsOfMiniumSlides = new Array(1)
-  indexPositionsOfMiniumSlides = 0;
 
-  for (let i=1; i < A.length - 1; i++){
-    if (Math.abs(A[i] + A[i+1]) < actualMiniumSlide){
-      actualMiniumSlide = Math.abs(A[i] + A[i+1]);
-      //indexPositionsOfMiniumSlides = new Array (1);
-      indexPositionsOfMiniumSlides = i;
+function solution(A){
+  let actualMiniumSlide = 100001;
+  let actualMiniumIndex = null;
+  let i = 0;
+
+  for (i; i<A.length - 1; i++){
+    if ((A[i] + A[i+1]) / 2 < actualMiniumSlide){
+      actualMiniumSlide = (A[i] + A[i+1]) / 2;
+      actualMiniumIndex = i;
     }
-    /*else if (Math.abs(A[i] + A[i+1]) == actualMiniumSlide){
-      indexPositionsOfMiniumSlides = new Array (indexPositionsOfMiniumSlides.length + 1);
-      indexPositionsOfMiniumSlides.push(i);
-    }*/
   }
-  return indexPositionsOfMiniumSlides;
+
+  for (i=0; i<A.length - 2; i++){
+    if ((A[i] + A[i+1] + A[i+2]) / 3 < actualMiniumSlide){
+      actualMiniumSlide = (A[i] + A[i+1] + A[i+2]) / 3;
+      actualMiniumIndex = i;
+    }
+  }
+
+  return actualMiniumIndex;
 }
+
 let A = []
-A[0] = 8
-    A[1] = -2
-    //A[2] = 2
-    //A[3] = 5
-    //A[4] = 5
-    //A[5] = 1
+A[0] = 3
+    A[1] = -5
+    A[2] = 2
+    A[3] = 1
+    A[4] = 5
+    A[5] = 1
     //A[6] = 8
 
 console.log(solution(A));
