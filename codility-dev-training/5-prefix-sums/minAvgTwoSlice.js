@@ -1,5 +1,5 @@
 /*
-Premise: The smalles avg will be found splitting the array in parts of 2 and 3. Spliting
+Premise: The smallest avg will be found splitting the array in parts of 2 and 3. Spliting
 the array between more parts will never contain smaller averages, since all the other
 numbers all products of 2 or 3.
 */
