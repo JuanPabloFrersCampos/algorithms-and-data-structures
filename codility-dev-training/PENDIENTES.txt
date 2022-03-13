@@ -1,0 +1,28 @@
+- Practicar objetos:
+  Creación de propiedades, checkear si existen, acceder solo a su key, a su value.
+
+Recursos:
+  Como acceder solo a la key de una propiedad, como acceder al value. Como iterar un objeto correctamente
+  También revisar esto de objetos: https://www.tabnine.com/academy/javascript/how-to-get-an-objects-keys-and-values/
+
+  Usar for...in para iterar objetos >> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in
+
+Ejemplo:
+2-arrays oddOcurrencesInArray
+
+function solution(A) {
+    var list = {}
+    A.forEach(element => {
+        if (list.hasOwnProperty(element)) list[element] += 1;
+        else list[element] = 1;
+    });
+
+    console.log(list);
+    for (key in list){
+        if (list[key] % 2 !== 0) return parseInt(key);
+    }
+}
+
+-> En primera instancia, parece que la única diferencia entre acceder a un objeto con dotnotation y los [] es que con . solo se puede acceder, pero con [] también crear nuevas propiedades
+
+- Objetos complejos: Clases con propiedades, contructores.
